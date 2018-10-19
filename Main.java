@@ -1,16 +1,20 @@
+import java.util.*;
+
 class Main
 {
   public static void main(String[] args)
   {
-    int max = 12;
+    Scanner kb = new Scanner(System.in);
+    ArrayList <Integer> list = new ArrayList<Integer>();
 
-    for(int i = 1; i <= max; i++)
+    System.out.println("Enter the numbers to Search from: ");
+    String val = kb.nextLine();
+
+    String[] arr = val.split(" ");
+    for(int i = 0; i < arr.length; i++)
     {
-      for(int s = 1; s <= max; s++)
-      {
-        System.out.print(String.format("%4d", i * s));
-      }
-      System.out.println();
+      list.add(Integer.parseInt(arr[i]));
     }
+    System.out.println(Collections.max(list));
   }
 }
